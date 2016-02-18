@@ -1,0 +1,52 @@
+.container{
+	border: 1px dotted black;
+	overflow: none;
+}
+
+#left_section{
+	display: inline-block;
+}
+
+#name_input form ul{
+	padding-left: 0px;
+}
+
+
+#name_input form ul li{
+	list-style-type: none;
+	width: 400px;
+}
+
+#add_button{
+	display: block;
+}
+
+#card_holder{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.contact_card{
+	border: 1px solid black;
+	background-color: silver;
+	border-radius: 5px;
+	height: 120px;
+	width: 200px;
+	margin: 2px;
+}
+
+.contact_card p{
+	font-weight: bold;
+	text-align: center;
+	font-size: 2em;
+}
+#small_print{
+	font-size: 1em;
+	padding-left: 25px;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.hidden{
+	display:none;
+}

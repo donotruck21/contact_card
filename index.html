@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset ="utf-8">
+	<title>Contact Cards</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('form').submit(function(){
+				$('#card_holder').append("<div class='contact_card'><span id='card_front'><p>" + 
+							$('#first_name').val() + " " + $('#last_name').val() + "</p>" + " " + "<span id='small_print'>click to see more info </span>" + "</span>" + "<span id='hidden_description' class='hidden'>" + $('#description').val() + "</span>" + "</div>");
+				return false;
+			});
+
+			$('#card_holder').on('click','.contact_card',function(){
+				$(this).find('#card_front').toggleClass('hidden');
+				$(this).find('#hidden_description').toggleClass('hidden');
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<h1>The Coding Dojo Contact Page</h1>
+		<div id="left_section">
+			<div id="name_input">
+				<form>
+					<ul>
+						<li>First Name: <input id="first_name" type="text"></li>
+						<li>Last Name: <input id="last_name" type="text"></li>
+						<li>Description:</li>
+					</ul>
+					<textarea id="description" name="description" placeholder="Enter description"></textarea>
+					<input id="add_button" type="submit" value="Add User" class="btn btn-info">
+				</form>
+			</div>
+		</div>
+		<div id="card_holder">
+			<h5>Contacts</h5>
+		</div>
+	</div> <!-- end of container -->
+</body>
+</html>
